@@ -1,0 +1,35 @@
+Change Host Name to Jenkins
+sudo hostnamectl set-hostname Jenkins
+
+Perform update first
+sudo apt update
+
+Install Java 11
+sudo apt-get install default-jdk -y
+Verify Java Version
+java -version
+
+Maven Installation
+Maven is a popular build tool used for building Java applications. Please click here to learn more about Maven. You can install Maven by executing below command:
+
+sudo apt install maven -y
+
+you can type mvn --version
+you should see the below output.
+
+Jenkins Setup
+
+Add Repository key to the system
+
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+
+
+Append debian package repo address to the system
+
+echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+Update Ubuntu package
+sudo apt update
+
+Install Jenkins
+sudo apt install jenkins -y
